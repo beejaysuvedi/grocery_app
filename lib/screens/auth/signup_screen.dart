@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/screens/auth/signup_screen.dart';
+import 'package:grocery_app/screens/onboarding/onboarding_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +14,18 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 40),
-              Icon(Icons.arrow_back, size: 30, color: Color(0xff82CD47)),
+              InkWell(
+                 onTap: (){
+                Navigator.push(context,
+                MaterialPageRoute(builder: (_)=>OnboardingScreen()),);
+
+              },
+                child: Icon(Icons.arrow_back, size: 30, color: Color(0xff82CD47))),
               Center(child: Image.asset("assets/logo.png", height: 230)),
 
               Center(
                 child: Text(
-                  "Sign In",
+                  "Sign up",
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -46,6 +52,25 @@ class LoginScreen extends StatelessWidget {
 
               Text(
                 "Password",
+                style: TextStyle(fontSize: 20, color: Colors.grey),
+              ),
+
+              SizedBox(height: 5),
+
+              TextField(
+                decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.visibility),
+                  hintText: "Enter Your password",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+
+               SizedBox(height: 15),
+
+              Text(
+                "Confirm Password",
                 style: TextStyle(fontSize: 20, color: Colors.grey),
               ),
 
@@ -101,28 +126,19 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: 30),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.mail, size: 25, color: Colors.red),
-                  SizedBox(width: 5),
-                  Text("Login with google", style: TextStyle(fontSize: 14)),
-                ],
-              ),
-
-              SizedBox(height: 40),
+             
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don't have an account? ",
-                    style: TextStyle(color: Colors.grey),
+                    "Already have an account? ",
+                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400, fontSize: 16  ),
                   ),
                   Text(
-                    "Sign up",
+                    "Sign in",
                     style: TextStyle(
                       color: Color(0xff82CD47),
                       fontWeight: FontWeight.bold,
