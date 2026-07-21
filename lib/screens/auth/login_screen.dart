@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/screens/auth/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+const  LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               SizedBox(height: 40),
               Icon(Icons.arrow_back, size: 30, color: Color(0xff82CD47)),
-              Center(child: Image.asset("assets/logo.png", height: 230)),
+              Center(child: Image.asset("assets/logo.png", height: 200)),
 
               Center(
                 child: Text(
@@ -41,6 +41,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            
 
               SizedBox(height: 15),
 

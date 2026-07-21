@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/screens/home/home_screen.dart';
 import 'package:grocery_app/screens/onboarding/onboarding_screen.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -16,12 +17,11 @@ class SignupScreen extends StatelessWidget {
               SizedBox(height: 40),
               InkWell(
                  onTap: (){
-                Navigator.push(context,
-                MaterialPageRoute(builder: (_)=>OnboardingScreen()),);
+                Navigator.pop(context);
 
               },
                 child: Icon(Icons.arrow_back, size: 30, color: Color(0xff82CD47))),
-              Center(child: Image.asset("assets/logo.png", height: 230)),
+              Center(child: Image.asset("assets/logo.png", height: 200)),
 
               Center(
                 child: Text(
@@ -41,7 +41,19 @@ class SignupScreen extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
-                  hintText: "Enter your Username",
+                  hintText: "Beejay",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+                SizedBox(height: 15,),
+              Text("Email", style: TextStyle(fontSize: 20, color: Colors.grey)),
+              SizedBox(height: 5),
+              TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search),
+                  hintText: "beejaysuvedi@gmail.com",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -102,7 +114,7 @@ class SignupScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => SignupScreen()),
+                    MaterialPageRoute(builder: (_) => HomeScreen()),
                   );
                 },
 
