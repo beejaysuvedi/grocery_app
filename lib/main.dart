@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/cart/cart_screen.dart';
+import 'package:grocery_app/screens/auth/login_screen.dart';
+import 'package:grocery_app/screens/auth/signup_screen.dart';
 import 'package:grocery_app/screens/home/dash_board_screen.dart';
+import 'package:grocery_app/screens/home/fruits_screen.dart';
 import 'package:grocery_app/screens/onboarding/onboarding_screen.dart';
 
 void main() {
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
     
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const DashBoardScreen(),
+      home: const CartScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

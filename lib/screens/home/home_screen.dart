@@ -2,6 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:grocery_app/screens/auth/fruits_list.dart';
+import 'package:grocery_app/screens/home/fruits_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -183,10 +184,24 @@ class HomeScreen extends StatelessWidget {
                                       Icon(Icons.favorite_outline),
                                     ],
                                   ),
+                                  
 
-                                  Image.asset(
-                                    productData[index]["image"],
-                                    height: 100,
+                                  InkWell(onTap: (){
+                                    Navigator.push(context,MaterialPageRoute(builder: (_)=>FruitsScreen(
+
+                                      name: productData[index]["name"],
+                                      image: productData[index]["image"],
+                                      price: productData[index]['price'],
+                                      quantity: productData[index]['quantity'],
+                                      description: productData[index]["description"],
+                                      
+
+                                    )),);
+                                  },
+                                    child: Image.asset(
+                                      productData[index]["image"],
+                                      height: 100,
+                                    ),
                                   ),
                                   Text(
                                     productData[index]["price"],
@@ -205,24 +220,28 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   Text(productData[index]["quantity"]),
 
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                                    child: DottedLine(
-                                      dashColor: Colors.green,
-                                      lineThickness: 2,
-                                    ),
+                                  SizedBox(height: 120,),
+
+                                  Positioned(
+                                
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                                      child: DottedLine(
+                                        dashColor: Colors.green,
+                                        lineThickness: 2,
+                                      ),
+                                    ), 
                                   ),
+                                  
+
+
+
+                                   
                                    
                                    
 
 
-                                  Text(
-                                    "Add to cart",
-                                    style: TextStyle(
-                                      color: Colors.green,
-                                      fontSize: 18,
-                                    ),
-                                  ),
+                                
                                 ],
                               ),
 
